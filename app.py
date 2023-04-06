@@ -20,6 +20,8 @@ class MyClient(discord.Client):
         
         if message.content.startswith("$hello"):
             await message.channel.send("Hello " + str(message.author)[:-5])
+        if message.content.startswith("$test"):
+            await message.channel.send("This is a test.")
     
     #on_typing
     async def on_typing(self, channel, user, when):
