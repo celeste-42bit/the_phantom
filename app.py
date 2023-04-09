@@ -6,15 +6,22 @@ intents.presences = False
 intents.message_content = True
 intents.reactions = True
 
-
 class MyClient(discord.Client):
-
 
     #login
     async def on_ready(self):
         print(f'Logged in as {self.user} (ID: {self.user.id})')
         print('----------------------------------------------')
 
+        # ---- this is just for the fancies, ignore this... mumble, mumble... ----
+
+        with open('intro', 'r', encoding='utf-8') as i:
+            print(i.read())
+            i.close()
+
+        # ---- this is just for the fancies, ignore this... mumble, mumble... ----
+
+    #bot_channel = client.get_channel(1091021500259241984)
 
     #on_message
     async def on_message(self, message):
