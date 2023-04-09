@@ -15,6 +15,7 @@ class MyClient(discord.Client):
         # don't react to yourself, bot!
         if message.author == client.user:
             return
+
         print(str(message.author) + ": " + str(message.content))
 
         if message.content.startswith("$hello"):
@@ -34,6 +35,20 @@ class MyClient(discord.Client):
     async def on_message_edit(self, before, after):
         return
 
+    #on_reaction_add
+    async def on_reaction_add(self, reaction, user):
+        #await reaction.message.channel.send(str(user) + " reacted " + str(reaction.message.content) + " with " + reaction.emoji)
+        #await reaction.message.channel.send("Count: " + str(reaction.count))
+        return
+
+    async def on_reaction_remove(self, reaction, user):
+        return
+
+    async def on_raw_reaction_add(self, payload):
+        return
+
+    async def on_raw_reaction_remove(self, payload):
+        return
 
 with open("token", "r") as tkn:
     token = str(tkn.read())
