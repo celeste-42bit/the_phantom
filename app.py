@@ -16,13 +16,18 @@ class MyClient(discord.Client):
         # don't react to yourself, bot!
         if message.author == client.user:
             return
+        '''
+        This is how you select a specific channel:
+
+        welcome_channel = client.get_channel(welcome_channel_id)
+        await welcome_channel.send("Woo!")
+        '''
+        print(str(message.channel.id))
 
         print(str(message.author) + ": " + str(message.content))
 
         if message.content.startswith("$hello"):
-            await message.channel.send("Hello " + str(message.author)[:-5])
-        if message.content.startswith("$test"):
-            await message.channel.send("This is a test.")
+            await message.channel.send("Hello " + str(message.author)[:-5])  # [:-5] cut last 5 symbols (#0000)
 
     #on_typing
     async def on_typing(self, channel, user, when):
