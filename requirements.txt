@@ -18,4 +18,5 @@ networkx==3.1
 numpy==1.24.2
 sortedcontainers==2.4.0
 tag==0.5
+win-unicode-console==0.5
 yarl==1.8.2
