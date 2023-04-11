@@ -85,6 +85,16 @@ async def on_raw_reaction_add(payload):
     user = client.get_user(payload.user_id)
     message = await channel.fetch_message(payload.message_id)
     emoji = str(payload.emoji)
+    
+    
+    # This is just a very simple representation of how reaction-buttons work
+    if channel == 'channel_name':  # TODO add channel name for this
+        if emoji == 'emoji':  # TODO add emoji
+            pass  # TODO do something!
+        if emoji == 'emoji2':
+            pass
+
+
 
 @client.event
 async def on_raw_reaction_remove(payload):
